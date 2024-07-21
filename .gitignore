@@ -52,4 +52,4 @@ README.md
 cors.json
 test/
 firebase.json
-lib/firebase_options.dart
+firebase_options.dart
