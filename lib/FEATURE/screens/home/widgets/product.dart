@@ -113,13 +113,13 @@ class _ProductState extends State<Product> {
                                     .textTheme
                                     .headlineLarge!
                                     .apply(color: Colors.white)),
-                            SizedBox(height: 10),
+                            const SizedBox(height: 10),
                             Text(widget.details!.text1 ?? '',
-                                style: TextStyle(fontSize: 18)),
+                                style: const TextStyle(fontSize: 18)),
                             Text(widget.details!.text2 ?? '',
-                                style: TextStyle(fontSize: 18)),
+                                style: const TextStyle(fontSize: 18)),
                             Text(widget.details!.text3 ?? '',
-                                style: TextStyle(fontSize: 18)),
+                                style: const TextStyle(fontSize: 18)),
                           ],
                         ),
                       ),
