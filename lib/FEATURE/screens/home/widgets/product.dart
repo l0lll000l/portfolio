@@ -6,7 +6,6 @@ import 'package:webapp/Utils/constants/sizes.dart';
 import 'package:webapp/common/device_frame.dart';
 import 'package:webapp/common/frosted_glass.dart';
 import 'package:webapp/common/rounded_container.dart';
-import 'package:webapp/common/rounded_image.dart';
 import 'package:webapp/model/app_model.dart';
 
 class Product extends StatefulWidget {
@@ -119,7 +118,7 @@ class _ProductState extends State<Product> {
                                 style: TextStyle(fontSize: 18)),
                             Text(widget.details!.text2 ?? '',
                                 style: TextStyle(fontSize: 18)),
-                            Text(widget.details!.text2 ?? '',
+                            Text(widget.details!.text3 ?? '',
                                 style: TextStyle(fontSize: 18)),
                           ],
                         ),
