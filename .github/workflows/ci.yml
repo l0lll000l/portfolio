@@ -24,13 +24,9 @@ jobs:
           channel: "stable"
           architecture: x64
 
-      - name: clean dependencies
-        run: flutter clean
-
-      - name: Install dependencies
-        run: flutter pub get
+   
       #// apk
-      #    - run: flutter build apk --release --split-per-abi
+      #    - run: flutter build apk --release --split-per-abi  
       # //web
         - name: Build web
       - run: flutter build web --web-renderer html --release
