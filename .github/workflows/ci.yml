@@ -18,17 +18,16 @@ jobs:
       # - uses: actions/setup-java@v3
       #   with:
       #     distribution: "zulu"
+
       #     java-version: "12"
       - uses: subosito/flutter-action@v2
         with:
           channel: "stable"
           architecture: x64
 
-   
       #// apk
-      #    - run: flutter build apk --release --split-per-abi  
+      #    - run: flutter build apk --release --split-per-abi
       # //web
-        - name: Build web
       - run: flutter build web --web-renderer html --release
       #// ios
       # - run: |
