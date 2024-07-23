@@ -26,9 +26,9 @@ jobs:
           architecture: x64
 
       #// apk
-      #    - run: flutter build apk --release --split-per-abi
+         - run: flutter build apk --release --split-per-abi
       # //web
-      - run: flutter build web --web-renderer html --release
+      # - run: flutter build web --web-renderer html --release
       #// ios
       # - run: |
       #     flutter build ios --no-codesign
