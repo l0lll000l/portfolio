@@ -47,7 +47,6 @@
 #           artifacts: "build/web/**"
 #           tag: v1.0.${{ github.run_number }}
 #           token: ${{ secrets.TOKEN }}
-
 name: "Build & Release"
 
 on:
@@ -80,10 +79,10 @@ jobs:
 
       - name: Verify index.html
         run: |
-          if [ ! -f build/web/index.html ]; then
-            echo "index.html not found in build/web"
+          if (!(Test-Path -Path build/web/index.html)) {
+            Write-Error "index.html not found in build/web"
             exit 1
-          fi
+          }
 
       - name: Create Release
         id: create_release
@@ -92,4 +91,5 @@ jobs:
           artifacts: "build/web/**"
           tag: v1.0.${{ github.run_number }}
           token: ${{ secrets.TOKEN }}
+#
 #
