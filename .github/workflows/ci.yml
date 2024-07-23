@@ -26,9 +26,9 @@ jobs:
           architecture: x64
 
       #// apk
-         - run: flutter build apk --release --split-per-abi
+      #  - run: flutter build apk --release --split-per-abi
       # //web
-      # - run: flutter build web --web-renderer html --release
+      - run: flutter build web --web-renderer html --release
       #// ios
       # - run: |
       #     flutter build ios --no-codesign
@@ -42,6 +42,6 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           # artifacts: "build/app/outputs/apk/release/*,build/ios/iphoneos/app.ipa"
-          artifacts: "build/web"
+          artifacts: "build/web/"
           tag: v1.0.${{ github.run_number }}
           token: ${{ secrets.TOKEN }}
