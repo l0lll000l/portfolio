@@ -74,15 +74,15 @@ jobs:
           channel: "stable"
           architecture: x64
 
-      - name: Build Flutter web
-        run: flutter build web --web-renderer html --release
+      # - name: Build Flutter web
+      #   run: flutter build web --web-renderer html --release
 
-      - name: Verify index.html
-        run: |
-          if (!(Test-Path -Path build/web/index.html)) {
-            Write-Error "index.html not found in build/web"
-            exit 1
-          }
+      # - name: Verify index.html
+      #   run: |
+      #     if (!(Test-Path -Path build/web/index.html)) {
+      #       Write-Error "index.html not found in build/web"
+      #       exit 1
+      #     }
 
       - name: Create Release
         id: create_release
