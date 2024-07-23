@@ -28,7 +28,8 @@ jobs:
       #// apk
       #  - run: flutter build apk --release --split-per-abi
       # //web
-      - run: flutter build web --web-renderer html --release
+      - name: Build Flutter web
+          run: flutter build web --web-renderer html --release
 
       #// ios
       # - run: |
