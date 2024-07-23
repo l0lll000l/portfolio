@@ -47,37 +47,62 @@
 #           artifacts: "build/web/**"
 #           tag: v1.0.${{ github.run_number }}
 #           token: ${{ secrets.TOKEN }}
+name: Deploy to GitHub
 
-name: Flutter Web App CI/CD
-
+# Trigger the workflow on push events to the main branch
 on:
   push:
     branches: ["main"]
-  pull_request:
-    branches: ["main"]
 
 jobs:
-  build-and-deploy:
+  deploy:
+    # Run the workflow on a Windows environment
     runs-on: windows-latest
     steps:
+      # Checkout the code in the repository
       - uses: actions/checkout@v2
+        # Comment: This step checks out the code in the repository, so that we can access the files
+
+      # Set up Flutter
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: "3.0.0"
-          channel: "stable"
+          channel: "table"
           cache: true
+        # Comment: This step sets up Flutter, so that we can use it to build the web app
+
+      # Get dependencies
       - name: Get dependencies
         run: flutter pub get
+        # Comment: This step gets the dependencies required by the Flutter project
+
+      # Build the web app
       - name: Build web app
         run: flutter build web
-      - name: Deploy to GitHub Pages
+        # Comment: This step builds the web app using Flutter
+
+      # Upload the built web app as an artifact
+      - name: Upload to GitHub
         uses: actions/upload-artifact@v2
         with:
           name: web-app
           path: build/web
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-to-github-pages@v2
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          repository_name: ${{ github.repository }}
-          folder: build/web
+        # Comment: This step uploads the built web app as an artifact, so that we can access it later
+
+      # Create a new GitHub release
+      - name: Create GitHub release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          RELEASE_NAME: "Web App Release"
+          RELEASE_BODY: "Automated release from GitHub Actions"
+        # Comment: This step creates a new GitHub release, where we can upload the files
+
+      # Upload the files to the release
+      - name: Upload files to release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          UPLOAD_URL: ${{ steps.create-release.outputs.upload_url }}
+          FILES: build/web/**
+        # Comment: This step uploads the files from the build/web folder to the release
