@@ -47,15 +47,19 @@
 #           artifacts: "build/web/**"
 #           tag: v1.0.${{ github.run_number }}
 #           token: ${{ secrets.TOKEN }}
+
 name: "Build & Release"
 
 on:
   pull_request:
     branches:
       - main
+      - master
   push:
     branches:
       - main
+      - master
+      - develop
 
 jobs:
   build:
@@ -74,7 +78,6 @@ jobs:
       - name: Build Flutter web
         run: flutter build web --web-renderer html --release
 
-      # New Step: Verify index.html
       - name: Verify index.html
         run: |
           if [ ! -f build/web/index.html ]; then
