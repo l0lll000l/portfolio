@@ -1,8 +1,9 @@
 import 'dart:async';
-import 'package:get/get.dart';
+
+import 'package:Portfolio/Utils/loaders/loaders.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/services.dart';
-import 'package:webapp/Utils/loaders/loaders.dart';
+import 'package:get/get.dart';
 
 /// Manages the network connectivity status and provides methods to check and handle connectivity changes.
 class NetworkManager extends GetxController {

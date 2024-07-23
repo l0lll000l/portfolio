@@ -1,7 +1,7 @@
+import 'package:Portfolio/Utils/constants/sizes.dart';
+import 'package:Portfolio/controller/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:webapp/Utils/constants/sizes.dart';
-import 'package:webapp/controller/home_controller.dart';
 
 class LetsWorkTogether extends StatelessWidget {
   const LetsWorkTogether({

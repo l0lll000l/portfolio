@@ -1,8 +1,6 @@
 import 'package:dotlottie_loader/dotlottie_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:webapp/Utils/Helpers/helper_functions.dart';
-import 'package:webapp/Utils/constants/colors.dart';
 
 class TAnimationLoaderWidget extends StatelessWidget {
   const TAnimationLoaderWidget(

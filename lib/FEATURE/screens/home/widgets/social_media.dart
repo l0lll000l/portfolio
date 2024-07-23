@@ -1,8 +1,8 @@
 import 'dart:html' as html;
 
+import 'package:Portfolio/Utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:webapp/Utils/constants/image_strings.dart';
 
 class SocialMedia extends StatelessWidget {
   const SocialMedia({

@@ -1,6 +1,6 @@
+import 'package:Portfolio/model/app_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
-import 'package:webapp/model/app_model.dart';
 
 class HomeController extends GetxController {
   static HomeController get instance => Get.find();

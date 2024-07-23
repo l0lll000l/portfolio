@@ -1,12 +1,12 @@
+import 'package:Portfolio/FEATURE/screens/home/widgets/app_bar.dart';
+import 'package:Portfolio/Utils/constants/image_strings.dart';
+import 'package:Portfolio/Utils/constants/sizes.dart';
+import 'package:Portfolio/common/device_frame.dart';
+import 'package:Portfolio/common/frosted_glass.dart';
+import 'package:Portfolio/common/rounded_container.dart';
+import 'package:Portfolio/model/app_model.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:webapp/FEATURE/screens/home/widgets/app_bar.dart';
-import 'package:webapp/Utils/constants/image_strings.dart';
-import 'package:webapp/Utils/constants/sizes.dart';
-import 'package:webapp/common/device_frame.dart';
-import 'package:webapp/common/frosted_glass.dart';
-import 'package:webapp/common/rounded_container.dart';
-import 'package:webapp/model/app_model.dart';
 
 class Product extends StatefulWidget {
   const Product({super.key, required this.details});

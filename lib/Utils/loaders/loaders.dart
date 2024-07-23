@@ -1,8 +1,8 @@
+import 'package:Portfolio/Utils/Helpers/helper_functions.dart';
+import 'package:Portfolio/Utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:webapp/Utils/Helpers/helper_functions.dart';
-import 'package:webapp/Utils/constants/colors.dart';
 
 class Tloaders {
   static hideSnackBar() =>

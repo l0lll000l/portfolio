@@ -1,8 +1,8 @@
+import 'package:Portfolio/Utils/constants/colors.dart';
+import 'package:Portfolio/Utils/constants/sizes.dart';
+import 'package:Portfolio/Utils/loaders/shimmer.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:webapp/Utils/constants/colors.dart';
-import 'package:webapp/Utils/constants/sizes.dart';
-import 'package:webapp/Utils/loaders/shimmer.dart';
 
 class TRoundedImage extends StatefulWidget {
   const TRoundedImage({

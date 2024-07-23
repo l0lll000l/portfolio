@@ -1,6 +1,6 @@
+import 'package:Portfolio/Utils/constants/sizes.dart';
+import 'package:Portfolio/Utils/loaders/shimmer.dart';
 import 'package:flutter/material.dart';
-import 'package:webapp/Utils/constants/sizes.dart';
-import 'package:webapp/Utils/loaders/shimmer.dart';
 
 class IboxesShimmer extends StatelessWidget {
   const IboxesShimmer({super.key});

@@ -1,6 +1,6 @@
+import 'package:Portfolio/Utils/constants/colors.dart';
+import 'package:Portfolio/Utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
-import 'package:webapp/Utils/constants/colors.dart';
-import 'package:webapp/Utils/constants/sizes.dart';
 
 class XRoundedContainer extends StatelessWidget {
   const XRoundedContainer({
