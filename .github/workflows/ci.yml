@@ -47,49 +47,37 @@
 #           artifacts: "build/web/**"
 #           tag: v1.0.${{ github.run_number }}
 #           token: ${{ secrets.TOKEN }}
-name: "Build & Release"
+
+name: Flutter Web App CI/CD
 
 on:
-  pull_request:
-    branches:
-      - main
-      - master
   push:
-    branches:
-      - main
-      - master
-      - develop
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
 
 jobs:
-  build:
-    name: Build & Release
+  build-and-deploy:
     runs-on: windows-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Set up Flutter
-        uses: subosito/flutter-action@v2
+      - uses: actions/checkout@v2
+      - uses: subosito/flutter-action@v2
         with:
+          flutter-version: "3.0.0"
           channel: "stable"
-          architecture: x64
-
-      # - name: Build Flutter web
-      #   run: flutter build web --web-renderer html --release
-
-      # - name: Verify index.html
-      #   run: |
-      #     if (!(Test-Path -Path build/web/index.html)) {
-      #       Write-Error "index.html not found in build/web"
-      #       exit 1
-      #     }
-
-      - name: Create Release
-        id: create_release
-        uses: ncipollo/release-action@v1
+          cache: true
+      - name: Get dependencies
+        run: flutter pub get
+      - name: Build web app
+        run: flutter build web
+      - name: Deploy to GitHub Pages
+        uses: actions/upload-artifact@v2
         with:
-          artifacts: "build/web/**"
-          tag: v1.0.${{ github.run_number }}
-          token: ${{ secrets.TOKEN }}
-#
-#
+          name: web-app
+          path: build/web
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-to-github-pages@v2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          repository_name: ${{ github.repository }}
+          folder: build/web
