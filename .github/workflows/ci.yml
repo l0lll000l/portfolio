@@ -47,31 +47,3 @@
 #           artifacts: "build/web/**"
 #           tag: v1.0.${{ github.run_number }}
 #           token: ${{ secrets.TOKEN }}
-on:
-  push:
-    branches:
-      - main
-      - master
-      - develop
-
-name: "Release"
-
-jobs:
-  release:
-    name: Release
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Upload files to release
-        uses: actions/upload-artifact@v2
-        with:
-          name: build-web
-          path: build/web
-
-      - name: Push to Releases
-        uses: ncipollo/release-action@v1
-        with:
-          artifacts: "build-web"
-          tag: v1.0.${{ github.run_number }}
-          token: ${{ secrets.TOKEN }}
