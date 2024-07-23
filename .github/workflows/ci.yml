@@ -73,7 +73,7 @@ jobs:
           architecture: x64
 
       - name: Build Flutter web
-        run: flutter build web --web-renderer html --release
+        run: flutter build web
 
       - name: Push to Releases
         uses: ncipollo/release-action@v1
