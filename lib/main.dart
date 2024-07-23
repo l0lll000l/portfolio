@@ -3,20 +3,6 @@ import 'package:Portfolio/Utils/Theme/theme.dart';
 import 'package:Portfolio/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:Portfolio/FEATURE/screens/home/widgets/app_bar.dart';
-import 'package:Portfolio/FEATURE/screens/home/widgets/lets_work_together.dart';
-import 'package:Portfolio/FEATURE/screens/home/widgets/product.dart';
-import 'package:Portfolio/FEATURE/screens/home/widgets/social_media.dart';
-import 'package:Portfolio/Utils/constants/image_strings.dart';
-import 'package:Portfolio/Utils/constants/sizes.dart';
-import 'package:Portfolio/common/device_frame.dart';
-import 'package:Portfolio/common/frosted_glass.dart';
-import 'package:Portfolio/common/rounded_container.dart';
-import 'package:Portfolio/common/rounded_image.dart';
-import 'package:Portfolio/controller/home_controller.dart';
-import 'package:Portfolio/model/app_model.dart';
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 Future<void> main() async {

@@ -1,17 +1,18 @@
+import 'package:Portfolio/FEATURE/screens/home/widgets/lets_work_together.dart';
+import 'package:Portfolio/FEATURE/screens/home/widgets/product.dart';
+import 'package:Portfolio/FEATURE/screens/home/widgets/social_media.dart';
+import 'package:Portfolio/Utils/constants/image_strings.dart';
+import 'package:Portfolio/Utils/constants/sizes.dart';
+import 'package:Portfolio/common/device_frame.dart';
+import 'package:Portfolio/common/frosted_glass.dart';
+import 'package:Portfolio/common/rounded_container.dart';
+import 'package:Portfolio/common/rounded_image.dart';
+import 'package:Portfolio/controller/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:webapp/FEATURE/screens/home/widgets/app_bar.dart';
-import 'package:webapp/FEATURE/screens/home/widgets/intro_and_profile.dart';
-import 'package:webapp/FEATURE/screens/home/widgets/lets_work_together.dart';
-import 'package:webapp/FEATURE/screens/home/widgets/product.dart';
-import 'package:webapp/FEATURE/screens/home/widgets/social_media.dart';
-import 'package:webapp/Utils/constants/image_strings.dart';
-import 'package:webapp/Utils/constants/sizes.dart';
-import 'package:webapp/common/device_frame.dart';
-import 'package:webapp/common/frosted_glass.dart';
-import 'package:webapp/common/rounded_container.dart';
-import 'package:webapp/common/rounded_image.dart';
-import 'package:webapp/controller/home_controller.dart';
+
+import 'widgets/app_bar.dart';
+import 'widgets/intro_and_profile.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -98,16 +99,17 @@ class _HomeScreenState extends State<HomeScreen> {
                                                       .length >
                                                   0
                                               ? XdeviceFrame(
-                                                  padding: EdgeInsets.all(5),
+                                                  padding:
+                                                      const EdgeInsets.all(5),
                                                   backGroundColor:
-                                                      Color.fromARGB(
+                                                      const Color.fromARGB(
                                                           255, 255, 255, 255),
                                                   isNetworkImage: true,
                                                   fit: BoxFit.contain,
                                                   imageurl: appdata
                                                       .details!.imageList![0],
                                                   applyImageRadius: true)
-                                              : const TRoundedImage(
+                                              : TRoundedImage(
                                                   imageurl: XImages.no,
                                                   applyImageRadius: true),
                                         ),
