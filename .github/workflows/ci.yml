@@ -92,3 +92,4 @@ jobs:
           artifacts: "build/web/**"
           tag: v1.0.${{ github.run_number }}
           token: ${{ secrets.TOKEN }}
+#
