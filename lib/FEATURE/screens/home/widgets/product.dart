@@ -53,7 +53,7 @@ class _ProductState extends State<Product> {
                               child: CarouselSlider(
                                   items: widget.details!.imageList!
                                       .map((banner) => Padding(
-                                            padding: const EdgeInsets.all(3),
+                                            padding: const EdgeInsets.all(5),
                                             child: XdeviceFrame(
                                               width: 340,
                                               onPressed: () {},

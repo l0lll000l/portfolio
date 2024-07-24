@@ -30,7 +30,7 @@ class LetsWorkTogether extends StatelessWidget {
           height: TSizes.spaceBtwItems / 4,
         ),
         Text(
-          'Are you looking for a dedicated and skilled Flutter developer to bring your ideas to life? With my expertise in building high-performance, cross-platform applications, I am here to help you create seamless and engaging mobile experiences. Whether you need a new app from scratch, enhancements to an existing project, or technical consultation, let\'s collaborate to achieve your goals. Together, we can turn your vision into reality. Reach out to discuss how we can work together and make something amazing!',
+          'Let us know if you want to talk about your next project!',
           style: Theme.of(context)
               .textTheme
               .bodyMedium!

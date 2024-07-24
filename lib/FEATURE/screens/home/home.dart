@@ -1,6 +1,6 @@
 import 'package:Portfolio/FEATURE/screens/home/widgets/lets_work_together.dart';
 import 'package:Portfolio/FEATURE/screens/home/widgets/product.dart';
-import 'package:Portfolio/FEATURE/screens/home/widgets/social_media.dart';
+import 'package:Portfolio/FEATURE/screens/home/widgets/thanks.dart';
 import 'package:Portfolio/Utils/constants/image_strings.dart';
 import 'package:Portfolio/Utils/constants/sizes.dart';
 import 'package:Portfolio/common/device_frame.dart';
@@ -46,7 +46,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 image: AssetImage(XImages.background), fit: BoxFit.cover)),
         alignment: Alignment.center,
         child: Padding(
-          padding: const EdgeInsets.only(left: 50, right: 50, top: 50),
+          padding: EdgeInsets.only(
+              left: 50, right: 50, top: size.width > 550 ? 50.1 : 10.1),
           child: ListView(
             shrinkWrap: true,
             scrollDirection: Axis.vertical,
@@ -137,13 +138,16 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               const Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Divider(
-                    color: Colors.grey,
-                    thickness: 1,
-                    height: 20,
-                    indent: 20,
-                    endIndent: 20,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 20),
+                    child: Divider(
+                      color: Colors.grey,
+                      thickness: 1,
+                      height: 20,
+                      indent: 20,
+                      endIndent: 20,
+                    ),
                   ),
                 ],
               ),
@@ -151,31 +155,7 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(
                 height: 50,
               ),
-              const FrostedGlass(
-                theHeight: 140,
-                child: Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text(
-                          'Thank you for visiting my portfolio! I invite you to explore and see how my skills and experiences align with your project needs. Let’s create something amazing together!',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          SocialMedia(),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+              Thanks(),
               const SizedBox(
                 height: 50,
               ),

@@ -30,7 +30,7 @@ class IntroAndProfile extends StatelessWidget {
           children: [
             Text('Hello, I am Athul', style: GoogleFonts.outfit().apply()),
             Text('Flutter Full-Stack Developer </>',
-                style: size.width > 601
+                style: size.width > 607
                     ? Theme.of(context).textTheme.displaySmall!.apply(
                         color: Colors.white, overflow: TextOverflow.ellipsis)
                     : const TextStyle(fontSize: 25, color: Colors.white)),
@@ -86,7 +86,7 @@ class IntroAndProfile extends StatelessWidget {
           ],
         ),
         const Spacer(),
-        if (size.width > 805)
+        if (size.width > 858)
           Padding(
             padding: const EdgeInsets.only(right: 50),
             child: Column(
